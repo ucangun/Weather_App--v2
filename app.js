@@ -128,5 +128,17 @@ const getWeatherData = async () => {
         alertMessage.classList.replace("d-block", "d-none");
       }, 3000);
     }
-  } catch (error) {}
+  } catch (error) {
+    if (lang == "de") {
+      alertMessage.textContent = `Stadt nicht gefunden`;
+    } else {
+      alertMessage.textContent = `City Not Found!`;
+    }
+
+    alertMessage.classList.replace("d-none", "d-block");
+
+    setTimeout(() => {
+      alertMessage.classList.replace("d-block", "d-none");
+    }, 3000);
+  }
 };
