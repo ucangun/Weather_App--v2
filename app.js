@@ -12,6 +12,7 @@ let url; // api request
 let units = "metric"; // Fahrenheit - imperial
 let lang = "en"; // for Deutsch DE
 let cities = [];
+let userLocation = false;
 
 //! Date Set
 
@@ -63,6 +64,7 @@ locate.addEventListener("click", () => {
     //console.log(coords);
     const { latitude, longitude } = coords;
     url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${units}&lang=${lang}&appid=${apiKey}`;
+    userLocation = true;
     getWeatherData();
   });
 });
@@ -107,6 +109,11 @@ const getWeatherData = async () => {
   </div> 
     `;
 
-    cardContainer.prepend(card);
+    if (userLocation) {
+      locationDiv.appendChild(card);
+      userLocation = false;
+    } else {
+      cardContainer.prepend(card);
+    }
   } catch (error) {}
 };
