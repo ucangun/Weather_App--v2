@@ -106,7 +106,9 @@ const getWeatherData = async () => {
       </div>
       <div class="temperature">
       <p>${weather[0].description}</p>
-        <h1>${main.temp.toFixed(0)} °C </h1>
+        <h1><i class="bi bi-thermometer-half"></i>${main.temp.toFixed(
+          0
+        )} °C </h1>
       </div>
     </div>
   </div> 
