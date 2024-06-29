@@ -1,4 +1,4 @@
-/* :root {
+:root {
   --primary-color: #008a70;
   --secondary-color: #001a31;
   --bg-color: #7aa3b7;
@@ -8,14 +8,18 @@ body {
   background-color: var(--bg-color);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100vh;
   margin: 0;
   font-family: "Arial", sans-serif;
 }
 
 .weather-widget {
-  background-color: var(--secondary-color);
+  background: linear-gradient(
+    to bottom,
+    var(--secondary-color),
+    var(--primary-color)
+  );
   border-radius: 10px;
   color: white;
   width: 300px;
@@ -29,32 +33,34 @@ body {
 
 .weather-header p {
   margin: 0;
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 .weather-header h2 {
-  margin: 5px 0;
-  font-size: 18px;
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
 }
 
 .weather-body {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  /* justify-content: space-between; */
   align-items: center;
-  margin: 20px 0;
+  margin: 1.5rem 0;
 }
 
 .weather-icon img {
-  width: 50px;
-}
-
-.temperature h1 {
-  margin: 0;
-  font-size: 50px;
+  color: #fff;
+  width: 10rem;
 }
 
 .temperature p {
-  margin: 5px 0 0 0;
-  font-size: 18px;
+  margin: 0.1rem 0;
+  font-size: 1.5rem;
   color: #bdc3c7;
-} */
+}
+
+.temperature h1 {
+  margin: 1rem 0;
+  font-size: 50px;
+}
