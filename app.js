@@ -14,6 +14,39 @@ let lang = "en"; // for Deutsch DE
 let cities = [];
 let userLocation = false;
 
+//! Date Set
+
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+const currentDate = new Date();
+
+const dayName = days[currentDate.getDay()];
+const monthName = months[currentDate.getMonth()];
+const dayNumber = currentDate.getDate();
+const formattedDate = `${dayName}, ${monthName}, ${dayNumber}`;
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -39,7 +72,7 @@ const getWeatherData = async () => {
   card.innerHTML = `
   <div class="weather-widget">
   <div class="weather-header">
-    <p></p>
+    <p>${formattedDate}</p>
     <h2>${name}, ${sys.country}</h2>
   </div>
   <div class="weather-body">
