@@ -19,6 +19,7 @@ body {
   height: 100%;
   overflow: hidden;
   z-index: -1;
+  filter: contrast(0.5);
 }
 .video-background video {
   width: 100%;
@@ -41,13 +42,36 @@ body {
   object-fit: cover;
 }
 
+#locate {
+  color: var(--secondary-color) !important;
+  font-size: 1.3rem;
+}
+
+.form-control {
+  outline: none !important;
+}
+
+.search {
+  color: var(--secondary-color) !important;
+  border: none !important;
+  outline: none !important;
+  transition: all 0.4s;
+}
+
+.search:hover,
+.search:active {
+  border: none !important;
+  outline: none !important;
+  transform: scale(1.2);
+}
+
 .weather-widget {
   background: linear-gradient(
     to bottom,
     var(--secondary-color),
     var(--primary-color)
   );
-  filter: opacity(0.95);
+  filter: opacity(0.9);
   border-radius: 10px;
   color: white;
   padding: 1rem;
