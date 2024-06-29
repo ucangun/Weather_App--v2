@@ -67,11 +67,23 @@ locate.addEventListener("click", () => {
   });
 });
 
+langButton.addEventListener("click", (e) => {
+  if (e.target.textContent === "DE") {
+    input.setAttribute("placeholder", "Suche nach einer Stadt");
+    lang = "de";
+  } else if (e.target.textContent === "EN") {
+    input.setAttribute("placeholder", "Search for a city");
+    lang = "en";
+  }
+});
+
+//! Functions
+
 const getWeatherData = async () => {
   try {
     const { data } = await axios(url);
     const { main, name, sys, weather } = data;
-    // const iconUrl = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0].icon}.svg`; //^ alternatif
+
     const iconUrl = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`; //^ openweathermap.org
 
     const card = document.createElement("div");
