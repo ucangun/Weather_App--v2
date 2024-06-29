@@ -26,15 +26,6 @@ body {
   height: 100%;
   object-fit: cover;
 }
-/* .content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-} */
 
 .logo {
   width: 7rem;
@@ -73,6 +64,8 @@ body {
   );
   filter: opacity(0.9);
   border-radius: 10px;
+  max-width: 30rem;
+  height: 28rem;
   color: white;
   padding: 1rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -124,5 +117,49 @@ body {
 
 .temperature h1 {
   margin: 1rem 0;
-  font-size: 50px;
+  font-size: 3rem;
+}
+
+/* ---------------------------------- */
+/*             RESPONSIVE             */
+/* ---------------------------------- */
+@media (max-width: 1400px) {
+  .close-icon {
+    right: 0.4rem;
+  }
+  .weather-header p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .close-icon {
+    right: 0.2rem;
+    font-size: 0.8rem;
+  }
+  .weather-header p {
+    font-size: 0.8rem;
+  }
+  .temperature h1 {
+    margin: 1rem 0;
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 992px) {
+  .close-icon {
+    right: 0.8rem;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+  }
+  .temperature h1 {
+    font-size: 3rem;
+  }
+  .weather-header p {
+    margin: 0;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
 }
