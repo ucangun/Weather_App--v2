@@ -19,10 +19,21 @@ body {
   color: white;
   padding: 1rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close-icon {
+  position: absolute;
+  top: 0;
+  right: 0.8rem;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
 }
 
 .weather-header {
   text-align: center;
+  position: relative;
 }
 
 .weather-header p {

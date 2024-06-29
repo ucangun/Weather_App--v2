@@ -98,6 +98,7 @@ const getWeatherData = async () => {
     <div class="weather-header">
       <p>${formattedDate}</p>
       <h2>${name}, ${sys.country}</h2>
+      <i class="bi bi-x-circle close-icon"></i>
     </div>
     <div class="weather-body">
       <div class="weather-icon">
