@@ -88,10 +88,12 @@ const getWeatherData = async () => {
 
     const iconUrl = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`; //^ openweathermap.org
 
-    const card = document.createElement("div");
-    card.classList.add("col");
-    card.setAttribute("id", `${name}`);
-    card.innerHTML = `
+    if (!cities.includes(name)) {
+      cities.push(name);
+      const card = document.createElement("div");
+      card.classList.add("col");
+      card.setAttribute("id", `${name}`);
+      card.innerHTML = `
     <div class="weather-widget card mb-4  ">
     <div class="weather-header">
       <p>${formattedDate}</p>
@@ -109,11 +111,22 @@ const getWeatherData = async () => {
   </div> 
     `;
 
-    if (userLocation) {
-      locationDiv.appendChild(card);
-      userLocation = false;
+      if (userLocation) {
+        locationDiv.appendChild(card);
+        userLocation = false;
+      } else {
+        cardContainer.prepend(card);
+      }
     } else {
-      cardContainer.prepend(card);
+      if (lang == "de") {
+        alertMessage.textContent = `Sie kennen das Wetter für die ${name} bereits. Bitte suchen Sie nach einer anderen Stadt 😉`;
+      } else {
+        alertMessage.textContent = `You already know the weather for ${name}, Please search for another city 😉`;
+      }
+      alertMessage.classList.replace("d-none", "d-block");
+      setTimeout(() => {
+        alertMessage.classList.replace("d-block", "d-none");
+      }, 3000);
     }
   } catch (error) {}
 };
