@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container-lg">
+      <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-3 border-bottom"
+      >
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-3 col-md-3 mb-2 mb-md-0"
+        >
+          <img src="./assets/favicon.ico" alt="weather" width="40px" />
+          <h2>Weather App</h2>
+        </div>
+        <ul
+          class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 mb-5 rounded"
+        >
+          <li class="me-3">
+            <i
+              class="bi bi-geo-alt fs-5"
+              id="locate"
+              role="button"
+              tabindex="0"
+            ></i>
+          </li>
+          <li>
+            <form role="search">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search for a city"
+                  aria-label="Recipient's username"
+                  aria-describedby="button-addon2"
+                />
+                <button class="btn btn-outline-secondary text-white">
+                  <i class="bi bi-search" id="search"></i>
+                </button>
+              </div>
+            </form>
+          </li>
+        </ul>
+
+        <div class="col-md-3 text-end">
+          <ul
+            class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 language"
+          >
+            <li role="button" tabindex="0">EN</li>
+            <li>&nbsp;|&nbsp;</li>
+            <li role="button" tabindex="0">DE</li>
+          </ul>
+        </div>
+      </header>
+      <div style="height: 50px">
+        <p
+          class="alert alert-warning p-1 text-center d-none"
+          role="alert"
+          id="alert"
+        ></p>
+      </div>
+
+      <div class="row g-5">
+        <div class="col-md-3">
+          <div
+            class="position-sticky d-block text-center"
+            style="top: 2rem"
+            id="userLocation"
+          ></div>
+          <div id="clock"></div>
+        </div>
+        <div class="col-md-9">
+          <div
+            class="row row-cols-1 row-cols-md-3 mb-3 text-center"
+            id="card-container"
+          >
+            <!--  -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./app.js"></script>
+    <!-- <script src="./assets/clock.js"></script> -->
+  </body>
+</html>
+
+<!-- ------------------------------- -->
+<!--         Card Structure          -->
+<!-- ------------------------------- -->
+
+<!-- <div class="weather-widget">
+  <div class="weather-header">
+    <p>Wednesday, July 22</p>
+    <h2>San Francisco, CA</h2>
+  </div>
+  <div class="weather-body">
+    <div class="weather-icon">
+      <img src="cloudy-icon.png" alt="Partly Cloudy" />
+    </div>
+    <div class="temperature">
+      <h1>27°</h1>
+      <p>Partly Cloudy</p>
+    </div>
+  </div>
+</div> -->
