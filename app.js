@@ -118,6 +118,16 @@ const getWeatherData = async () => {
       } else {
         cardContainer.prepend(card);
       }
+
+      //! Remove Elements
+      document.addEventListener("click", (e) => {
+        if (e.target.classList.contains("bi-x-circle")) {
+          const card = e.target.closest(".col");
+          cities = cities.filter((city) => city !== card.id);
+          //cities.splice(cities.indexOf(card), 1);
+          card.remove();
+        }
+      });
     } else {
       if (lang == "de") {
         alertMessage.textContent = `Sie kennen das Wetter für die ${name} bereits. Bitte suchen Sie nach einer anderen Stadt 😉`;
